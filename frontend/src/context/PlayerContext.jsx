@@ -8,6 +8,7 @@ export const PlayerProvider = ({ children }) => {
     const [progress, setProgress] = useState(0);
     const [duration, setDuration] = useState(0);
     const [queue, setQueue] = useState([]);
+    const [volume, setVolume] = useState(1);
 
     const audioRef = useRef(new Audio());
 
@@ -16,8 +17,9 @@ export const PlayerProvider = ({ children }) => {
 
         if (currentSong) {
             audio.src = currentSong.audioUrl;
+            audio.volume = volume;
             if (isPlaying) {
-                audio.play().catch(e => console.error("Error playing audio", e));
+                audio.play().catch(e => console.error("Playback error:", e));
             }
         }
 
@@ -43,6 +45,10 @@ export const PlayerProvider = ({ children }) => {
             audioRef.current.pause();
         }
     }, [isPlaying]);
+
+    useEffect(() => {
+        audioRef.current.volume = volume;
+    }, [volume]);
 
     const playSong = (song, playQueue = []) => {
         setCurrentSong(song);
@@ -79,17 +85,23 @@ export const PlayerProvider = ({ children }) => {
         setProgress(time);
     };
 
+    const handleVolume = (level) => {
+        setVolume(level);
+    }
+
     return (
         <PlayerContext.Provider value={{
             currentSong,
             isPlaying,
             progress,
             duration,
+            volume,
             playSong,
             togglePlay,
             playNext,
             playPrevious,
             seek,
+            handleVolume,
             setQueue,
             queue
         }}>
