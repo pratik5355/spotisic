@@ -16,13 +16,13 @@ const seedData = async () => {
             {
                 title: "Aashiqui 2",
                 artist: "Arijit Singh",
-                imageUrl: "/images/aashiqui2.jpg",
+                imageUrl: "https://placehold.co/300x300/181818/FFFFFF?text=Aashiqui+2",
                 year: 2013
             },
             {
                 title: "Rockstar",
                 artist: "A.R. Rahman",
-                imageUrl: "/images/rockstar.jpg",
+                imageUrl: "https://placehold.co/300x300/282828/FFFFFF?text=Rockstar",
                 year: 2011
             }
         ]);

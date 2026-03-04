@@ -7,7 +7,7 @@ const Player = () => {
         <div className="player-container">
             <div className="player-left">
                 <img
-                    src="/images/rockstar.jpg"
+                    src="https://placehold.co/64x64/282828/FFFFFF?text=Kun+Faya+Kun"
                     alt="album art"
                     className="album-art"
                 />
