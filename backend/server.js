@@ -17,7 +17,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/songs', require('./routes/songRoutes'));
-// app.use('/api/albums', require('./routes/albumRoutes'));
+app.use('/api/albums', require('./routes/albumRoutes'));
 
 app.get('/', (req, res) => {
     res.send('Spotisic API is running...');

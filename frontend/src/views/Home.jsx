@@ -1,18 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Card from '../components/ui/Card';
+import { PlayerContext } from '../context/PlayerContext';
+import axios from 'axios';
 import './Home.css';
-// import axios from 'axios';
 
 const Home = () => {
     const [greeting, setGreeting] = useState('Good afternoon');
+    const [albums, setAlbums] = useState([]);
+    const [songs, setSongs] = useState([]);
+    const { playSong } = useContext(PlayerContext);
 
-    // Hardcoded mock data to show the UI
-    const recentAlbums = [
-        { id: 1, title: 'Rockstar', artist: 'A.R. Rahman', imageUrl: 'https://placehold.co/300x300/282828/FFFFFF?text=Rockstar' },
-        { id: 2, title: 'Aashiqui 2', artist: 'Mithoon, Ankit Tiwari', imageUrl: 'https://placehold.co/300x300/181818/FFFFFF?text=Aashiqui+2' },
-        { id: 3, title: 'G.O.A.T', artist: 'Diljit Dosanjh', imageUrl: 'https://placehold.co/300x300/121212/1ed760?text=G.O.A.T' },
-        { id: 4, title: 'Kabir Singh', artist: 'Various Artists', imageUrl: 'https://placehold.co/300x300/000000/FFFFFF?text=Kabir+Singh' },
-    ];
+    const API_URL = 'http://localhost:5000/api';
+
+    useEffect(() => {
+        const hour = new Date().getHours();
+        if (hour < 12) setGreeting('Good morning');
+        else if (hour < 18) setGreeting('Good afternoon');
+        else setGreeting('Good evening');
+
+        // Fetch data from backend
+        const fetchData = async () => {
+            try {
+                const [albumRes, songRes] = await Promise.all([
+                    axios.get(`${API_URL}/albums`),
+                    axios.get(`${API_URL}/songs`)
+                ]);
+                setAlbums(albumRes.data);
+                setSongs(songRes.data);
+            } catch (err) {
+                console.error("Error fetching data", err);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     const suggestedArtists = [
         { id: 1, title: 'Arijit Singh', artist: 'Artist', rounded: true, imageUrl: 'https://ui-avatars.com/api/?name=Arijit+Singh&background=1ed760&color=000&size=300' },
@@ -22,23 +43,27 @@ const Home = () => {
         { id: 5, title: 'Pritam', artist: 'Artist', rounded: true, imageUrl: 'https://ui-avatars.com/api/?name=Pritam&background=000000&color=fff&size=300' },
     ];
 
-    useEffect(() => {
-        const hour = new Date().getHours();
-        if (hour < 12) setGreeting('Good morning');
-        else if (hour < 18) setGreeting('Good afternoon');
-        else setGreeting('Good evening');
-    }, []);
-
     return (
         <div className="home-container">
             <h1 className="home-greeting">{greeting}</h1>
 
             <section className="home-section">
-                <h2 className="section-title">Recently Played</h2>
+                <h2 className="section-title">Popular Albums</h2>
                 <div className="cards-grid">
-                    {recentAlbums.map(album => (
-                        <Card key={album.id} {...album} />
-                    ))}
+                    {albums.length > 0 ? albums.map(album => (
+                        <Card key={album._id} title={album.title} artist={album.artist} imageUrl={album.imageUrl} />
+                    )) : <p>Loading albums...</p>}
+                </div>
+            </section>
+
+            <section className="home-section">
+                <h2 className="section-title">Recently Played Songs</h2>
+                <div className="cards-grid">
+                    {songs.length > 0 ? songs.map((song, i) => (
+                        <div key={song._id} onClick={() => playSong(song, songs)} >
+                            <Card title={song.title} artist={song.artist} imageUrl={song.imageUrl} />
+                        </div>
+                    )) : <p>Loading songs...</p>}
                 </div>
             </section>
 
@@ -54,14 +79,6 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="home-section">
-                <h2 className="section-title">Made For You</h2>
-                <div className="cards-grid">
-                    {recentAlbums.slice().reverse().map((album, i) => (
-                        <Card key={`mix-${i}`} {...album} title={`Daily Mix ${i + 1}`} artist="Made for user" />
-                    ))}
-                </div>
-            </section>
         </div>
     );
 };

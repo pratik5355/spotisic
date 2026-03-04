@@ -7,6 +7,7 @@
     grid-template-rows: 1fr 90px;
     height: 100vh;
     width: 100vw;
+    transition: all 0.3s ease;
 }
 
 .sidebar-container {
@@ -16,6 +17,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    transition: transform 0.3s ease;
 }
 
 .main-view-container {
@@ -57,4 +59,30 @@
     justify-content: space-between;
     padding: 0 16px;
     z-index: 100;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .app-container {
+        grid-template-areas:
+            "main-view"
+            "now-playing-bar";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 70px;
+        /* smaller player on mobile */
+    }
+
+    .sidebar-container {
+        display: none;
+        /* Hide sidebar completely on mobile, could be a hamburger menu instead */
+    }
+
+    .main-view-container {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .topbar-container {
+        padding: 12px 16px;
+    }
 }

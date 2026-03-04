@@ -5,6 +5,14 @@
     width: 30%;
 }
 
+.player-placeholder {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
 .album-art {
     width: 56px;
     height: 56px;
@@ -16,11 +24,19 @@
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
 }
 
 .track-info p {
     font-size: 12px;
     color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
 }
 
 .player-center {
@@ -94,6 +110,7 @@
     background-color: #fff;
     height: 100%;
     border-radius: 2px;
+    pointer-events: none;
 }
 
 .progress-bar:hover .progress-fill {
@@ -117,4 +134,29 @@
 
 .volume-bar {
     width: 90px;
+}
+
+/* Responsive Player */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .player-left {
+        width: 50%;
+    }
+
+    .player-center {
+        width: 50%;
+    }
+
+    .album-art {
+        width: 48px;
+        height: 48px;
+    }
+
+    .progress-container {
+        display: none;
+        /* Hide progress bar on mobile to save space */
+    }
 }
