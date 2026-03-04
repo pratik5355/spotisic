@@ -16,13 +16,13 @@ const seedData = async () => {
             {
                 title: "Aashiqui 2",
                 artist: "Arijit Singh",
-                imageUrl: "https://images.unsplash.com/photo-1583089892943-e02e52f17d01?q=80&w=300&auto=format&fit=crop", // placeholder
+                imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Aashiqui_2_Poster.jpg/220px-Aashiqui_2_Poster.jpg",
                 year: 2013
             },
             {
                 title: "Rockstar",
                 artist: "A.R. Rahman",
-                imageUrl: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=300&auto=format&fit=crop",
+                imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Rockstar_2011_Teaser_Poster.jpg/220px-Rockstar_2011_Teaser_Poster.jpg",
                 year: 2011
             }
         ]);

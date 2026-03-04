@@ -8,18 +8,18 @@ const Home = () => {
 
     // Hardcoded mock data to show the UI
     const recentAlbums = [
-        { id: 1, title: 'Rockstar', artist: 'A.R. Rahman', imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=300&auto=format&fit=crop' },
-        { id: 2, title: 'Aashiqui 2', artist: 'Mithoon, Ankit Tiwari', imageUrl: 'https://images.unsplash.com/photo-1493225457124-a1a2a5f5eff2?q=80&w=300&auto=format&fit=crop' },
-        { id: 3, title: 'G.O.A.T', artist: 'Diljit Dosanjh', imageUrl: 'https://images.unsplash.com/photo-1583089892943-e02e52f17d01?q=80&w=300&auto=format&fit=crop' },
-        { id: 4, title: 'Kabir Singh', artist: 'Various Artists', imageUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=300&auto=format&fit=crop' },
+        { id: 1, title: 'Rockstar', artist: 'A.R. Rahman', imageUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Rockstar_2011_Teaser_Poster.jpg/220px-Rockstar_2011_Teaser_Poster.jpg' },
+        { id: 2, title: 'Aashiqui 2', artist: 'Mithoon, Ankit Tiwari', imageUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Aashiqui_2_Poster.jpg/220px-Aashiqui_2_Poster.jpg' },
+        { id: 3, title: 'G.O.A.T', artist: 'Diljit Dosanjh', imageUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Diljit_Dosanjh_-_G.O.A.T..png/220px-Diljit_Dosanjh_-_G.O.A.T..png' },
+        { id: 4, title: 'Kabir Singh', artist: 'Various Artists', imageUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/13/Kabir_Singh_poster.jpg/220px-Kabir_Singh_poster.jpg' },
     ];
 
     const suggestedArtists = [
-        { id: 1, title: 'Arijit Singh', artist: 'Artist', rounded: true, imageUrl: 'https://images.unsplash.com/photo-1502814041762-074fccecc6ab?q=80&w=300&auto=format&fit=crop' },
-        { id: 2, title: 'Shreya Ghoshal', artist: 'Artist', rounded: true, imageUrl: 'https://images.unsplash.com/photo-1510915361894-faa8b2d4bd28?q=80&w=300&auto=format&fit=crop' },
-        { id: 3, title: 'A.R. Rahman', artist: 'Artist', rounded: true, imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=300&auto=format&fit=crop' },
-        { id: 4, title: 'Diljit Dosanjh', artist: 'Artist', rounded: true, imageUrl: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=300&auto=format&fit=crop' },
-        { id: 5, title: 'Pritam', artist: 'Artist', rounded: true, imageUrl: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=300&auto=format&fit=crop' },
+        { id: 1, title: 'Arijit Singh', artist: 'Artist', rounded: true, imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Arijit_Singh_in_2019.jpg/800px-Arijit_Singh_in_2019.jpg' },
+        { id: 2, title: 'Shreya Ghoshal', artist: 'Artist', rounded: true, imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Shreya_Ghoshal_at_the_launch_of_her_album_Humnasheen.jpg/800px-Shreya_Ghoshal_at_the_launch_of_her_album_Humnasheen.jpg' },
+        { id: 3, title: 'A.R. Rahman', artist: 'Artist', rounded: true, imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/A._R._Rahman%2C_2021.jpg/800px-A._R._Rahman%2C_2021.jpg' },
+        { id: 4, title: 'Diljit Dosanjh', artist: 'Artist', rounded: true, imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Diljit_Dosanjh_at_the_Trailer_launch_of_film_Soorma.jpg/800px-Diljit_Dosanjh_at_the_Trailer_launch_of_film_Soorma.jpg' },
+        { id: 5, title: 'Pritam', artist: 'Artist', rounded: true, imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pritam_Chakraborty.jpg/800px-Pritam_Chakraborty.jpg' },
     ];
 
     useEffect(() => {
