@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Play, Pause, SkipBack, SkipForward, Repeat, Shuffle, Volume2, Mic2, MonitorSpeaker } from 'lucide-react';
-import { PlayerContext } from '../context/PlayerContext';
+import { PlayerContext } from '../../context/PlayerContext';
 import './Player.css';
 
 const formatTime = (time) => {
