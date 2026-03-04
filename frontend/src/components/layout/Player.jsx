@@ -7,7 +7,7 @@ const Player = () => {
         <div className="player-container">
             <div className="player-left">
                 <img
-                    src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Rockstar_2011_Teaser_Poster.jpg/220px-Rockstar_2011_Teaser_Poster.jpg"
+                    src="/images/rockstar.jpg"
                     alt="album art"
                     className="album-art"
                 />

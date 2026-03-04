@@ -16,13 +16,13 @@ const seedData = async () => {
             {
                 title: "Aashiqui 2",
                 artist: "Arijit Singh",
-                imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Aashiqui_2_Poster.jpg/220px-Aashiqui_2_Poster.jpg",
+                imageUrl: "/images/aashiqui2.jpg",
                 year: 2013
             },
             {
                 title: "Rockstar",
                 artist: "A.R. Rahman",
-                imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Rockstar_2011_Teaser_Poster.jpg/220px-Rockstar_2011_Teaser_Poster.jpg",
+                imageUrl: "/images/rockstar.jpg",
                 year: 2011
             }
         ]);
