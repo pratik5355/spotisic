@@ -65,3 +65,14 @@
     justify-content: center;
     cursor: pointer;
 }
+
+@media (max-width: 600px) {
+    .install-btn {
+        display: none;
+    }
+
+    .upgrade-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}

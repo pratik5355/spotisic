@@ -59,6 +59,18 @@
 
 @media (max-width: 800px) {
     .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .section-title {
+        font-size: 20px;
     }
 }
