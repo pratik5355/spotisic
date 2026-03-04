@@ -38,10 +38,10 @@ const Sidebar = () => {
             <div className="divider" />
 
             <div className="sidebar-playlists">
-                <p>Chill Vibes</p>
-                <p>Coding Focus</p>
-                <p>Synthwave 2024</p>
-                <p>Midnight Mix</p>
+                <p>Bollywood Top 50</p>
+                <p>Punjabi Hits 2024</p>
+                <p>90s Romance</p>
+                <p>Arijit Singh Best</p>
             </div>
         </div>
     );

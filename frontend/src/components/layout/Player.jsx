@@ -7,13 +7,13 @@ const Player = () => {
         <div className="player-container">
             <div className="player-left">
                 <img
-                    src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=64&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=64&auto=format&fit=crop"
                     alt="album art"
                     className="album-art"
                 />
                 <div className="track-info">
-                    <h4>Neon City</h4>
-                    <p>The Synthwave</p>
+                    <h4>Kun Faya Kun</h4>
+                    <p>A.R. Rahman</p>
                 </div>
             </div>
 

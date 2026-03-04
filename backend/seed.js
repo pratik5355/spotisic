@@ -14,43 +14,43 @@ const seedData = async () => {
 
         const albums = await Album.insertMany([
             {
-                title: "Midnight Drives",
-                artist: "The Synthwave",
-                imageUrl: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=300&auto=format&fit=crop",
-                year: 2023
+                title: "Aashiqui 2",
+                artist: "Arijit Singh",
+                imageUrl: "https://images.unsplash.com/photo-1583089892943-e02e52f17d01?q=80&w=300&auto=format&fit=crop", // placeholder
+                year: 2013
             },
             {
-                title: "Acoustic Mornings",
-                artist: "Sarah Folk",
-                imageUrl: "https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?q=80&w=300&auto=format&fit=crop",
-                year: 2021
+                title: "Rockstar",
+                artist: "A.R. Rahman",
+                imageUrl: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=300&auto=format&fit=crop",
+                year: 2011
             }
         ]);
 
         const songs = await Song.insertMany([
             {
-                title: "Neon City",
-                artist: "The Synthwave",
+                title: "Tum Hi Ho",
+                artist: "Arijit Singh",
                 album: albums[0].title,
                 audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
                 imageUrl: albums[0].imageUrl,
-                duration: "5:21"
+                duration: "4:22"
             },
             {
-                title: "Cyber Sunset",
-                artist: "The Synthwave",
+                title: "Sunn Raha Hai",
+                artist: "Ankit Tiwari",
                 album: albums[0].title,
                 audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
                 imageUrl: albums[0].imageUrl,
-                duration: "7:05"
+                duration: "6:30"
             },
             {
-                title: "Coffee in the Rain",
-                artist: "Sarah Folk",
+                title: "Kun Faya Kun",
+                artist: "A.R. Rahman",
                 album: albums[1].title,
                 audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
                 imageUrl: albums[1].imageUrl,
-                duration: "6:12"
+                duration: "7:53"
             }
         ]);
 
