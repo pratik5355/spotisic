@@ -13,17 +13,29 @@ const Sidebar = () => {
             </div>
 
             <div className="space-y-4 px-3 mb-8">
-                <NavLink to="/" className={({ isActive }) => `flex items-center gap-4 font-semibold hover:text-white transition ${isActive ? 'text-white' : 'text-spotisic-textMuted'}`}>
-                    <Home size={24} className={({ isActive }) => isActive ? "fill-white" : ""} />
-                    Home
+                <NavLink to="/" className={({ isActive }) => `group flex items-center gap-4 font-semibold hover:text-white transition ${isActive ? 'text-white' : 'text-spotisic-textMuted'}`}>
+                    {({ isActive }) => (
+                        <>
+                            <Home size={24} className={isActive ? "fill-current" : ""} />
+                            Home
+                        </>
+                    )}
                 </NavLink>
-                <NavLink to="/search" className={({ isActive }) => `flex items-center gap-4 font-semibold hover:text-white transition ${isActive ? 'text-white' : 'text-spotisic-textMuted'}`}>
-                    <Search size={24} />
-                    Search
+                <NavLink to="/search" className={({ isActive }) => `group flex items-center gap-4 font-semibold hover:text-white transition ${isActive ? 'text-white' : 'text-spotisic-textMuted'}`}>
+                    {({ isActive }) => (
+                        <>
+                            <Search size={24} className={isActive ? "fill-current text-white border-2" : ""} />
+                            Search
+                        </>
+                    )}
                 </NavLink>
-                <NavLink to="/library" className={({ isActive }) => `flex items-center gap-4 font-semibold hover:text-white transition ${isActive ? 'text-white' : 'text-spotisic-textMuted'}`}>
-                    <Library size={24} className={({ isActive }) => isActive ? "fill-white" : ""} />
-                    Your Library
+                <NavLink to="/library" className={({ isActive }) => `group flex items-center gap-4 font-semibold hover:text-white transition ${isActive ? 'text-white' : 'text-spotisic-textMuted'}`}>
+                    {({ isActive }) => (
+                        <>
+                            <Library size={24} className={isActive ? "fill-current" : ""} />
+                            Your Library
+                        </>
+                    )}
                 </NavLink>
             </div>
 

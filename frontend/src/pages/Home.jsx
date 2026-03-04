@@ -36,8 +36,8 @@ const Home = () => {
         const fetchHomeData = async () => {
             try {
                 const [songsRes, artistsRes] = await Promise.all([
-                    axios.get('http://localhost:5000/api/songs'),
-                    axios.get('http://localhost:5000/api/artists')
+                    axios.get('http://127.0.0.1:5000/api/songs'),
+                    axios.get('http://127.0.0.1:5000/api/artists')
                 ]);
                 setSongs(songsRes.data);
                 setArtists(artistsRes.data);
