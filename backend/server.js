@@ -23,6 +23,7 @@ app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/songs', require('./routes/songRoutes'));
 app.use('/api/artists', require('./routes/artistRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/search', require('./routes/searchRoutes'));
 
 // Static Uploads Folder
 const path = require('path');

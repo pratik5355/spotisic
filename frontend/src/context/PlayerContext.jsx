@@ -1,6 +1,8 @@
-import React, { createContext, useState, useRef, useEffect } from 'react';
+import React, { createContext, useState, useRef, useEffect, useContext } from 'react';
 
 export const PlayerContext = createContext();
+
+export const usePlayer = () => useContext(PlayerContext);
 
 export const PlayerProvider = ({ children }) => {
     const [currentSong, setCurrentSong] = useState(null);
@@ -11,6 +13,28 @@ export const PlayerProvider = ({ children }) => {
     const [volume, setVolume] = useState(1);
 
     const audioRef = useRef(new Audio());
+
+    const playSong = (song, playQueue = []) => {
+        setCurrentSong(song);
+        setIsPlaying(true);
+        if (playQueue.length > 0) {
+            setQueue(playQueue);
+        }
+    };
+
+    const togglePlay = () => {
+        if (currentSong) {
+            setIsPlaying(!isPlaying);
+        }
+    };
+
+    const playNext = () => {
+        if (queue.length === 0 || !currentSong) return;
+        const currentIndex = queue.findIndex(s => s._id === currentSong._id || s.id === currentSong.id);
+        if (currentIndex !== -1 && currentIndex < queue.length - 1) {
+            playSong(queue[currentIndex + 1]);
+        }
+    };
 
     useEffect(() => {
         const audio = audioRef.current;
@@ -49,28 +73,6 @@ export const PlayerProvider = ({ children }) => {
     useEffect(() => {
         audioRef.current.volume = volume;
     }, [volume]);
-
-    const playSong = (song, playQueue = []) => {
-        setCurrentSong(song);
-        setIsPlaying(true);
-        if (playQueue.length > 0) {
-            setQueue(playQueue);
-        }
-    };
-
-    const togglePlay = () => {
-        if (currentSong) {
-            setIsPlaying(!isPlaying);
-        }
-    };
-
-    const playNext = () => {
-        if (queue.length === 0 || !currentSong) return;
-        const currentIndex = queue.findIndex(s => s._id === currentSong._id || s.id === currentSong.id);
-        if (currentIndex !== -1 && currentIndex < queue.length - 1) {
-            playSong(queue[currentIndex + 1]);
-        }
-    };
 
     const playPrevious = () => {
         if (queue.length === 0 || !currentSong) return;
