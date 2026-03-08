@@ -11,12 +11,12 @@ const seedData = async () => {
         console.log('Seeding initial mock data into MongoDB Memory Server...');
 
         const artists = await Artist.insertMany([
-            { name: 'A.R. Rahman', avatarUrl: 'https://ui-avatars.com/api/?name=A+R+Rahman&background=1ed760&color=000&size=300', language: 'Tamil', monthlyListeners: 35000000 },
-            { name: 'Shreya Ghoshal', avatarUrl: 'https://ui-avatars.com/api/?name=Shreya+Ghoshal&background=282828&color=fff&size=300', language: 'Hindi', monthlyListeners: 28000000 },
-            { name: 'Pritam', avatarUrl: 'https://ui-avatars.com/api/?name=Pritam&background=181818&color=fff&size=300', language: 'Hindi', monthlyListeners: 40000000 },
-            { name: 'Arijit Singh', avatarUrl: 'https://ui-avatars.com/api/?name=Arijit+Singh&background=dc148c&color=fff&size=300', language: 'Hindi', monthlyListeners: 42000000 },
-            { name: 'Diljit Dosanjh', avatarUrl: 'https://ui-avatars.com/api/?name=Diljit+Dosanjh&background=e13300&color=fff&size=300', language: 'Punjabi', monthlyListeners: 20000000 },
-            { name: 'Anirudh', avatarUrl: 'https://ui-avatars.com/api/?name=Anirudh&background=006450&color=fff&size=300', language: 'Tamil', monthlyListeners: 25000000 }
+            { name: 'A.R. Rahman', avatarUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/AR_Rahman_At_The_%E2%80%98Marvel_Anthem%E2%80%99_Launch_%283x4_cropped%29.jpg', language: 'Tamil', monthlyListeners: 35000000 },
+            { name: 'Shreya Ghoshal', avatarUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Shreya_Ghoshal_Behindwoods_Gold_Icons_Awards_2023_%28cropped%29.jpg', language: 'Hindi', monthlyListeners: 28000000 },
+            { name: 'Pritam', avatarUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Pritam_Live_%28cropped%29.jpg/960px-Pritam_Live_%28cropped%29.jpg', language: 'Hindi', monthlyListeners: 40000000 },
+            { name: 'Arijit Singh', avatarUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Arijit_Singh_performance_at_Chandigarh_2025.jpg', language: 'Hindi', monthlyListeners: 42000000 },
+            { name: 'Diljit Dosanjh', avatarUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Diljit_Dosanjh.jpg', language: 'Punjabi', monthlyListeners: 20000000 },
+            { name: 'Anirudh', avatarUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Anirudh_Ravichander_at_Audi_Ritz_Style_Awards_2017_%28cropped%29.jpg/1280px-Anirudh_Ravichander_at_Audi_Ritz_Style_Awards_2017_%28cropped%29.jpg', language: 'Tamil', monthlyListeners: 25000000 }
         ]);
 
         const albums = await Album.insertMany([
